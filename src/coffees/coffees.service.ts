@@ -16,6 +16,7 @@ export class CoffeesService {
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
     private readonly connection: Connection,
+    @Inject('COFFEE_BRANDS') coffeeBrands: string[],
   ) {}
 
   findAll(paginationQuery: PaginationQueryDto) {
