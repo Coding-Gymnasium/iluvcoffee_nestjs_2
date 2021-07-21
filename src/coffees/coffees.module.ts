@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { COFFEE_BRANDS } from './coffees.constants';
 import { CoffeesController } from './coffees.controller';
 import { CoffeesService } from './coffees.service';
 import { Coffee } from './entities/coffee.entity';
@@ -12,7 +13,7 @@ import { Event } from '../events/entities/event.entity';
   providers: [
     CoffeesService,
     {
-      provide: 'COFFEE_BRANDS',
+      provide: COFFEE_BRANDS,
       useValue: ['buddy brew', 'nescafe'],
     },
   ],
